@@ -71,6 +71,7 @@ with jackhammer as source:
     # Audio w/ background noise recorded in audio_BN
     audio_BN = r.record(source)
 
+# Invokes Google Web Speech API & outputs text
 print("Audio file to text (Has Background Noise):", r.recognize_google(audio_BN))
 
 ### Adjusting for Background Noise (not perfect)
@@ -81,7 +82,7 @@ with jackhammer as source:
     r.adjust_for_ambient_noise(source)
     # Adjusted audio w/ background noise recorded in audio_Adjust_BN
     audio_Adjust_BN = r.record(source)
-
+# Invokes Google Web Speech API & outputs text
 print("Audio file to text (Adjusted Background Noise):", r.recognize_google(audio_Adjust_BN))
 
 
@@ -95,4 +96,5 @@ with jackhammer as source:
     # Adjusted audio w/ background noise recorded in audio_Adjust2_BN
     audio_Adjust2_BN = r.record(source)
 
-print("Audio file to text (Adjusted Background Noise - improved):", r.recognize_google(audio_Adjust2_BN))
+# Invokes Google Web Speech API & outputs text - shows all alternative tramscriptions
+print("Audio file to text (Adjusted Background Noise - improved):", r.recognize_google(audio_Adjust2_BN, show_all = True))
