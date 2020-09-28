@@ -24,11 +24,16 @@ mic = sr.Microphone()
 # Use specified microphone as source
 #mic = sr.Microphone(device_index = 2)
 
-# Record Data from Microphone input
-print("record data from microphone input:")
-with mic as source:
-    audio = r.listen(source)
+try:
+    # Record Data from Microphone input
+    print("record data from microphone input:")
+    with mic as source:
+        r.adjust_for_ambient_noise(source)
+        audio = r.listen(source)
 
-# Invokes Google Web Speech API & outputs text
-print("Invoke Google Web Speech API:")
-print(r.recognize_google(audio))
+    # Invokes Google Web Speech API & outputs text
+    print("Invoke Google Web Speech API:")
+    print(r.recognize_google(audio))
+
+except:
+    print("Could not Recognize speech")
