@@ -9,8 +9,8 @@ Transcribing speech from microphone input
 """
 
 # Lists all the available microphones
-print("Available Microphones:")
-sr.Microphone.list_microphone_names()
+print("Available Microphones:", sr.Microphone.list_microphone_names())
+
 
 # Gives default Microphone information
 #print("DEFAULT MIC INFO")
