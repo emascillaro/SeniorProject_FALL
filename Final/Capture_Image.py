@@ -7,4 +7,3 @@ while(result):
     cv2.imwrite("Capture_Image.jpg", frame)
     result = False
 videoCaptureObject.release()
-cv2.destroyAllWindows()
