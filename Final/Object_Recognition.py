@@ -116,7 +116,7 @@ if understood_speech == 1:
             text = "{}: {:.4f}".format(classes[classIDs[i]], confidences[i])
             cv.putText(img, text, (x, y - 5), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
             
-            # Removes confience from text
+            # Removes confdience from text
             text_short = text.rsplit(':', 1)[0]
 
             # Fills list with all items detected in the image
