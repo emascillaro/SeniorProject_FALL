@@ -5,7 +5,7 @@ import time
 
 # Read image file
 img = cv.imread('test1.jpeg')
-img = cv.resize(img, (img.shape[0] // 8, img.shape[1] // 8)) # Resize large images proportionally (1/8)
+#img = cv.resize(img0, (img0.shape[0] // 8, img0.shape[1] // 8)) # Resize large images proportionally (1/8)
 cv.imshow('window',  img)
 cv.waitKey(1)
 
@@ -98,5 +98,7 @@ if len(indices) > 0:
 
 # Show image with bounding boxes
 cv.imshow('window', img)
+print("new img")
+#print(text)
 cv.waitKey(0)
 cv.destroyAllWindows()
