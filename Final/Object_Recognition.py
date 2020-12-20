@@ -13,9 +13,10 @@ if understood_speech == 1:
     #print("read image file")
     # Read image file
     img = cv.imread('Capture_Image.jpg')
-    #img = cv.resize(img0, (img0.shape[0] // 8, img0.shape[1] // 8)) # Resize large images proportionally (1/8)
+    #img = cv.imread('test4.jpg')
+    #img2 = cv.resize(img, (img.shape[0] // 8, img.shape[1] // 8)) # Resize large images proportionally (1/8)
     #print("show image")
-    #cv.imshow('window',  img)
+    cv.imshow('window',  img)
     #cv.waitKey(0)
 
     #print("Load names of classes and get random colors")
@@ -116,6 +117,8 @@ if understood_speech == 1:
             text = "{}: {:.4f}".format(classes[classIDs[i]], confidences[i])
             cv.putText(img, text, (x, y - 5), cv.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
             
+            # print ("x:", x, "y:", y, "w:", w, "h:", h)
+
             # Removes confdience from text
             text_short = text.rsplit(':', 1)[0]
 
@@ -127,10 +130,15 @@ if understood_speech == 1:
     for noun in noun_list:
         if items.count(noun) > 1:
             print(noun, " is in the area more than once.")
+            ## Add 
         elif items.count(noun) == 1:
             print(noun, " is in the area once.")
+            print("the ", noun, " is located at", x, ", ", y)
+            print("the size of the ", noun, " is ", w, ", ", h)
         else:
             print(noun, "is not in the area")
+
+    cv.imshow('window', img)
 
     '''
     # Show image with bounding boxes

@@ -27,10 +27,10 @@ try:
     # Invokes Google Web Speech API & outputs text
     print("Entire Phrase: ")
     text_output = r.recognize_google(audio)
-    print(text_output)
+    print(text_output.lower())
 
     #Part of Speech Stuff
-    sentences = nltk.sent_tokenize(text_output)
+    sentences = nltk.sent_tokenize(text_output.lower())
 
     data = []
     noun_list = []
